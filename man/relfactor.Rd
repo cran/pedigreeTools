@@ -19,7 +19,7 @@ of the factor are used as the labels. Default is the complete set of
 individuals in the pedigree.}
 }
 \value{
-matrix (\linkS4class{dtCMatrix} - upper triangular sparse)
+matrix (\code{\link[Matrix:dtCMatrix-class]{dtCMatrix}} - upper triangular sparse)
 }
 \description{
 Determine the right Cholesky factor of the relationship matrix

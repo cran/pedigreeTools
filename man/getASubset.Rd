@@ -16,7 +16,7 @@ of the factor are used as the labels. Default is the complete set of
 individuals in the pedigree.}
 }
 \value{
-matrix (\linkS4class{dsCMatrix} - symmetric sparse)
+matrix (\code{\link[Matrix:dsCMatrix-class]{dsCMatrix}} - symmetric sparse)
 }
 \description{
 Returns subset of the additive relationship matrix for the pedigree.

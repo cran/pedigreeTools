@@ -10,8 +10,9 @@ getAInv(ped)
 \item{ped}{\code{\link{pedigree}}}
 }
 \value{
-matrix (\linkS4class{dsCMatrix} - symmetric sparse)
+matrix (\code{\link[Matrix:dsCMatrix-class]{dsCMatrix}} - symmetric sparse)
 }
+
 \description{
 Returns the inverse of additive relationship matrix for the
   pedigree.

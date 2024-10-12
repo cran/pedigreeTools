@@ -20,3 +20,37 @@ and a call to the UNPROTECT() macro was added at the end of the function:
 
 UNPROTECT(1);
 return ans;
+
+version 0.3 (2024-10-10)
+
+Fixes the following problems:
+
+1)
+
+Found the following Rd file(s) with Rd \link{} targets missing package anchors:
+    getA.Rd: dsCMatrix-class
+    getAInv.Rd: dsCMatrix-class
+    getASubset.Rd: dsCMatrix-class
+    getT.Rd: dtCMatrix-class
+    getTInv.Rd: dtCMatrix-class
+    relfactor.Rd: dtCMatrix-class
+    relfactorInv.Rd: dtCMatrix-class
+
+2)
+
+The *Strict* additional issue.
+
+Compilation fails with _R_USE_STRICT_R_HEADERS_=true, which defines
+STRICT_R_HEADERS to 1 which removes
+
+- the legacy definition of PI (use POSIX's M_PI, available in R fer ever).
+- the RS.h declarations for Calloc, Realloc, Free (use R_ forms i
+  available since R 3.4.0).
+
+The aim is to clean the namespace: in particular having a definition
+for Free has conflicted with some packages' C++ code.
+
+It is planned that STRICT_R_HEADERS=1 will become the default for 4.5.0,
+which in particular makes it necesssary that all CRAN packages with many
+strong reverse dependencies compile/install ok with the new default.
+
